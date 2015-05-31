@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  put 'audio/put_here'
+  post 'audio/put_here'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
