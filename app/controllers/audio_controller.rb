@@ -6,4 +6,9 @@ class AudioController < ApplicationController
 
     render :nothing => true, :status => 200
   end
+
+  def download
+    content = Story.last.audio
+    send_data content, :filename=>'recording.3gp', :type=>'application/audio', :disposition=>'attachment'
+  end
 end
