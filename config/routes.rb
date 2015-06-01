@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'stories/index'
+
+  get 'stories/show'
+
   post 'audio/put_here'
 
   # The priority is based upon order of creation: first created -> highest priority.
