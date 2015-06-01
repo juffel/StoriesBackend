@@ -8,7 +8,7 @@ class AudioController < ApplicationController
   end
 
   def download
-    content = Story.last.audio
+    content = Story.find(params[:id]).audio
     send_data content, :filename=>'recording.3gp', :type=>'application/audio', :disposition=>'attachment'
   end
 end
