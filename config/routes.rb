@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  get 'stories/index'
-
-  get 'stories/show'
+  resources :stories
 
   post 'audio/put_here'
 
