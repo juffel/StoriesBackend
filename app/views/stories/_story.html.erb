@@ -1,4 +1,4 @@
 <li>
-    <%= story.created_at %>
+    <%= story.created_at.strftime("%H:%M am %d.%m.%Y") %>
     <a href="/audio/download/<%= story.id %>">Download</a>
 </li>
