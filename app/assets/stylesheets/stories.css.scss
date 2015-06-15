@@ -1,3 +1,36 @@
 // Place all the styles related to the Stories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#token-entry {
+    background-image: url(/ziegel.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+    width: 300px;
+    height: 500px;
+
+    form {
+        width: 100%;
+        height: 100%;
+
+        .token {
+            text-align: center;
+        }
+
+        #token_1, #token_2, #token_3 {
+            padding-top: 30%;
+            input {
+                font-size: 27px;
+                width: 35px;
+                text-align: center;
+            }
+        }
+
+        .button {
+            padding-top: 14%;
+            text-align: center;
+        }
+    }
+}
+
