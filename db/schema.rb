@@ -11,12 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150601103144) do
+ActiveRecord::Schema.define(version: 20150615183138) do
 
   create_table "stories", force: true do |t|
     t.binary   "audio",      limit: 2147483647
+    t.string   "token"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "tokens", force: true do |t|
+    t.string   "token"
+    t.integer  "story_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tokens", ["story_id"], name: "index_tokens_on_story_id", using: :btree
 
 end
