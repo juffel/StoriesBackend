@@ -2,9 +2,12 @@ class AudioController < ApplicationController
   def put_here
     # simply save new story
     audio = params[:file]
-    Story.new({audio: audio.read}).save
+    story = Story.create({audio: audio.read})
 
-    render :nothing => true, :status => 200
+    # set response as (probably invalid) xml
+    xml = story.token
+
+    render :xml => xml, :status => 200
   end
 
   def download
