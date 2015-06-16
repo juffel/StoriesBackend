@@ -1,2 +1,23 @@
-<h1>Stories#edit</h1>
-<p>Find me in app/views/stories/edit.html.erb</p>
+<h1>Geschichte anpassen</h1>
+<div id="creation-date" data-creation-date="<%= @story.created_at %>">
+    Hochgeladen <%= @story.created_at.strftime('um %H:%M am  %d.%m.%Y') %>
+</div>
+<div id="form">
+    <form action="/edit">
+        <div>
+            <input>
+                Name Erzähler
+            </input>
+        </div>
+        <div>
+            <input>
+                Ort des Geschehens
+            </input>
+        </div>
+        <div>
+            <input value="Ok!" type="submit"></input>
+        </div>
+    </form>
+</div>
+<%= audio_tag  %>
+
