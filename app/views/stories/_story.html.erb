@@ -1,4 +1,4 @@
 <li>
+    <%= link_to "Zur Story", controller: "stories", action: "show", id: story.id%>
     <%= story.created_at.strftime("%H:%M am %d.%m.%Y") %>
-    <a href="/audio/download/<%= story.id %>">Download</a>
 </li>
