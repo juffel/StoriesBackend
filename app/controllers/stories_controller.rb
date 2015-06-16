@@ -1,4 +1,6 @@
 class StoriesController < ApplicationController
+  before_action :set_story
+
   def index
     @stories = Story.all.reverse_order
   end
@@ -22,6 +24,14 @@ class StoriesController < ApplicationController
       # TODO catch if no such id is present
       story_id = Story.where(token: token).first.id
       redirect_to action: "edit", id: story_id
+    end
+  end
+
+  private
+  
+  def set_story
+    if params[:id].present?
+      @story = Story.find(params[:id])
     end
   end
 end
