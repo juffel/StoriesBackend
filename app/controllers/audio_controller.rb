@@ -1,8 +1,15 @@
 class AudioController < ApplicationController
   def put_here
-    # simply save new story
+    # simply save new story as activerecord
     audio = params[:file]
     story = Story.create({audio: audio.read})
+
+    # also save audio file in filesystem so it can be served statically
+    # file access src: http://stackoverflow.com/a/1678388/1870317
+    name = "story_" + story.id + ".3gp"
+    directory = "public/stories"
+    path = File.join(directory, name)
+    File.open(path, "wb") { |f| f.write(audio.read) }
 
     # set response as (probably invalid) xml
     xml = story.token
