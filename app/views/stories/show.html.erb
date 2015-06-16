@@ -1,2 +1,7 @@
 <h1>Stories#show</h1>
-<p>Find me in app/views/stories/show.html.erb</p>
+
+<div>Erzähler: <%= @story.narrator %></div>
+<div>Ort: <%= @story.place %></div>
+
+<a href="/audio/download/<%= @story.id %>">Download</a>
+
