@@ -9,7 +9,7 @@ class AudioController < ApplicationController
     name = "story_" + story.id.to_s + ".3gp"
     directory = "public/audios"
     path = File.join(directory, name)
-    File.open(path, "wb") { |f| f.write(audio.read) }
+    # File.open(path, "wb") { |f| f.write(audio.read) }
 
     # set response as (probably invalid) xml
     xml = story.token
