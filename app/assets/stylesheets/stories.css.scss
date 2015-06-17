@@ -18,8 +18,15 @@
             text-align: center;
         }
 
+        input {
+            background-color: rgb(45,45,45);
+            border: 0px;
+            border-color: white;
+            color: white;
+        }
+
         #token_1, #token_2, #token_3 {
-            padding-top: 30%;
+            padding-top: 31%;
             input {
                 font-size: 27px;
                 width: 35px;

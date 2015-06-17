@@ -14,7 +14,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.5 r10040"
-   sodipodi:docname="drawing.svg">
+   sodipodi:docname="ziegel.svg">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -25,7 +25,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.98994949"
-     inkscape:cx="193.72685"
+     inkscape:cx="12.909544"
      inkscape:cy="166.01101"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -57,7 +57,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -75,7 +75,7 @@
        y="72.362183" />
     <path
        sodipodi:type="arc"
-       style="fill:#ffffff;fill-opacity:1;stroke:none"
+       style="fill:#2d2d2d;fill-opacity:1;stroke:none"
        id="path3761"
        sodipodi:cx="210"
        sodipodi:cy="292.36218"
@@ -89,13 +89,13 @@
        sodipodi:cy="292.36218"
        sodipodi:cx="210"
        id="path3763"
-       style="fill:#ffffff;fill-opacity:1;stroke:none"
+       style="fill:#2d2d2d;fill-opacity:1;stroke:none"
        sodipodi:type="arc"
        transform="translate(0,-120)" />
     <path
        transform="translate(0,120)"
        sodipodi:type="arc"
-       style="fill:#ffffff;fill-opacity:1;stroke:none"
+       style="fill:#2d2d2d;fill-opacity:1;stroke:none"
        id="path3765"
        sodipodi:cx="210"
        sodipodi:cy="292.36218"
