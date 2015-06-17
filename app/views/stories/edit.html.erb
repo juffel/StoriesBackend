@@ -3,14 +3,14 @@
     Hochgeladen <%= @story.created_at.strftime('um %H:%M am  %d.%m.%Y') %>
 </div>
 <div id="form">
-    <form action="/edit">
+    <form action="/stories/<%= @story.id %>/edit">
         <div>
-            <input>
+            <input name="narrator" value="<%= @story.narrator %>">
                 Name Erzähler
             </input>
         </div>
         <div>
-            <input>
+            <input name="place" value="<%= @story.place %>">
                 Ort des Geschehens
             </input>
         </div>

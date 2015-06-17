@@ -9,6 +9,14 @@ class StoriesController < ApplicationController
   end
 
   def edit
+    # assign passed parameters if present
+    if params['narrator'].present?
+      @story.narrator = params['narrator']
+    end
+    if params['place'].present?
+      @story.place = params['place']
+    end
+    @story.save
   end
 
   def token
