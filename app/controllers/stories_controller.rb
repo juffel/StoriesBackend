@@ -32,9 +32,16 @@ class StoriesController < ApplicationController
       token += params['token_3']
       token = token.upcase
 
-      # TODO catch if no such id is present
-      story_id = Story.where(token: token).first.id
-      redirect_to action: "edit", id: story_id
+      story = Story.where(token: token).first
+      if story.present?
+        story_id = story.id
+        redirect_to action: "edit", id: story_id
+      else
+        params.delete "token_1"
+        params.delete "token_2"
+        params.delete "token_3"
+        redirect_to action: token
+      end
     end
   end
 
