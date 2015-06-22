@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
   resources :stories
 
-  post 'audio/put_here'
-  get 'audio/download/:id', to: 'audio#download'
+  root 'stories#index'
+
+  get 'home', to: 'stories#home'
+  get 'index', to: 'stories#index'
   get 'token', to: 'stories#token'
 
-  root 'stories#index'
+  post 'audio/put_here'
+  get 'audio/download/:id', to: 'audio#download'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
