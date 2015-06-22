@@ -5,7 +5,7 @@ class AudioController < ApplicationController
 
     # save audio file in filesystem so it can be served statically
     # file access src: http://stackoverflow.com/a/1678388/1870317
-    file_path = Rails.root.join('public', 'audios', story.id.to_s + '.3gp')
+    file_path = Rails.root.join('public', 'audios', story.id.to_s + '.aac')
     File.open(file_path, 'wb') { |f| f.write(audio.read) }
 
     # set response as (probably invalid) xml

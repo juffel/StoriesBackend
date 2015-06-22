@@ -3,6 +3,11 @@
 <div>Erzähler: <%= @story.narrator %></div>
 <div>Ort: <%= @story.place %></div>
 
-<a href="<%= AudioHelper.download_path @story.id %>">Download</a>
-
-<audio src="<%= AudioHelper.download_path @story.id %>"></audio>
+<div>
+  <audio src="<%= AudioHelper.download_path @story.id %>"
+    controls preload>
+    Your Browser does not embedded .ogg audio.</audio>
+</div>
+<div>
+  <%= link_to "Download", AudioHelper.download_path(@story.id) %>
+</div>
