@@ -3,5 +3,6 @@
 <div>Erzähler: <%= @story.narrator %></div>
 <div>Ort: <%= @story.place %></div>
 
-<a href="/audio/download/<%= @story.id %>">Download</a>
+<a href="<%= AudioHelper.download_path + @story.id.to_s %>">Download</a>
 
+<audio src="<%= AudioHelper.download_path + @story.id.to_s %>"></audio>
