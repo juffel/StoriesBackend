@@ -11,10 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150616115542) do
+ActiveRecord::Schema.define(version: 20150622170427) do
 
   create_table "stories", force: true do |t|
-    t.binary   "audio",      limit: 2147483647
     t.string   "token"
     t.string   "narrator"
     t.string   "place"
