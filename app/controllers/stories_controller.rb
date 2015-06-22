@@ -45,4 +45,14 @@ class StoriesController < ApplicationController
       @story = Story.find(params[:id])
     end
   end
+
+  def self.get_zlb_stories_json
+    url = URI('http://grossstadtgeschichten-berlin.de/api/items')
+    req = Net::HTTP::Get.new(url)
+    req.content_type = "json"
+    stories = Net::HTTP.start(url.hostname, url.port) do |http|
+      http.request(req)
+    end
+    JSON.parse stories.body
+  end
 end
