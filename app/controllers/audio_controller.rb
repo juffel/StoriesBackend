@@ -1,7 +1,7 @@
 class AudioController < ApplicationController
   def put_here
-    # simply save new story as activerecord
     audio = params[:file]
+    story = Story.new
 
     # save audio file in filesystem so it can be served statically
     # file access src: http://stackoverflow.com/a/1678388/1870317
