@@ -4,9 +4,13 @@
 <div>Ort: <%= @story.place %></div>
 
 <div>
+<% if browser.firefox? %>
+  <i>Leider unterstützt diese Anwendung das Abspielen in Firefox nicht.</i>
+<% else %>
   <audio src="<%= AudioHelper.download_path @story.id %>"
     controls preload>
     Your Browser does not embedded .ogg audio.</audio>
+<% end %>
 </div>
 <div>
   <%= link_to "Download", AudioHelper.download_path(@story.id) %>
