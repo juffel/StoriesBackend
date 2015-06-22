@@ -2,6 +2,9 @@
 
 <div>Erzähler: <%= @story.narrator %></div>
 <div>Ort: <%= @story.place %></div>
+<% if @story.text.present? %>
+<div><%= @story.text %></div>
+<% end %>
 
 <div>
 <% if browser.firefox? %>
