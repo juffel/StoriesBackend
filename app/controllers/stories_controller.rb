@@ -40,7 +40,7 @@ class StoriesController < ApplicationController
         params.delete "token_1"
         params.delete "token_2"
         params.delete "token_3"
-        redirect_to action: token
+        redirect_to action: "token"
       end
     end
   end
