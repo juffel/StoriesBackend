@@ -15,8 +15,10 @@ class StoriesController < ApplicationController
   def edit
     # assign passed parameters if present
     if params['narrator'].present? or params['place'].present?
+      @story.title = params['title'] unless params['title'].empty?
       @story.narrator = params['narrator'] unless params['narrator'].empty?
       @story.place = params['place'] unless params['place'].empty?
+      @story.text = params['text'] unless params['text'].empty?
 
       redirect_to action: "show"
     end

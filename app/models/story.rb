@@ -1,13 +1,21 @@
 class Story < ActiveRecord::Base
-  before_create :set_token, :set_title
+  before_create :set_token, :set_narrator, :set_place, :set_title
 
   private
   def set_token
     self.token = new_int_token 3
   end
 
+  def set_narrator
+    self.narrator = ""
+  end
+
+  def set_place
+    self.place = ""
+  end
+
   def set_title
-    self.title = "Unbenannte Geschichte"
+    self.title = ""
   end
 
   # generates a new, unused idtoken string that is composed of 3 letters
