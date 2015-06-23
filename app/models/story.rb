@@ -15,7 +15,7 @@ class Story < ActiveRecord::Base
   def new_int_token k
     # generate new tokens until a yet-unused one is found
     loop do
-      token = (1..k).map{rand(11).to_s}.join
+      token = (1..k).map{rand(10).to_s}.join
       # check if this token is already used
       if (Story.where(token: token).size == 0)
         return token
