@@ -2,25 +2,22 @@
 <div id="creation-date" data-creation-date="<%= @story.created_at %>">
     Hochgeladen <%= @story.created_at.strftime('um %H:%M am  %d.%m.%Y') %>
 </div>
-<div id="form">
+<div>
     <form action="/stories/<%= @story.id %>/edit">
-        <div>
-            <input name="narrator" value="<%= @story.narrator %>">
-                Name Erzähler
-            </input>
+        <div class="form-group">
+            <label>Erzähler</label>
+            <input class="form-control" name="narrator" value="<%= @story.narrator %>" placeholder="Name Erzähler">
         </div>
-        <div>
-            <input name="place" value="<%= @story.place %>">
-                Ort des Geschehens
-            </input>
+        <div class="form-group">
+            <label>Ort</label>
+            <input class="form-control" name="place" value="<%= @story.place %>" placeholder="Ort des Geschehens">
         </div>
-        <div>
-            <input name="text" value="<%= @story.text %>">
-                Textinhalt
-            </input>
+        <div class="form-group">
+            <label>Textform</label>
+            <textarea class="form-control" name="text" rows="10"><%= @story.text %></textarea>
         </div>
-        <div>
-            <input value="Ok!" type="submit"></input>
+        <div class="form-group">
+            <input class="form-control" value="Speichern" type="submit"></input>
         </div>
     </form>
 </div>
