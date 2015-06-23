@@ -2,6 +2,7 @@ class StoriesController < ApplicationController
   before_action :set_story
 
   def home
+    @newest = Story.last
   end
 
   def index

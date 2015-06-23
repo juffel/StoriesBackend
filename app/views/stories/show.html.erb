@@ -1,4 +1,4 @@
-<h1>Stories#show</h1>
+<h1><%= @story.title %></h1>
 
 <div>Erzähler: <%= @story.narrator %></div>
 <div>Ort: <%= @story.place %></div>
@@ -10,9 +10,8 @@
 <% if browser.firefox? %>
   <i>Leider unterstützt diese Anwendung das Abspielen in Firefox nicht.</i>
 <% else %>
-  <audio src="<%= AudioHelper.download_path @story.id %>"
-    controls preload>
-    Your Browser does not embedded .ogg audio.</audio>
+  <%= audio_tag AudioHelper.download_path(@story.id),
+    controls: true,  preload: true %>
 <% end %>
 </div>
 <div>
