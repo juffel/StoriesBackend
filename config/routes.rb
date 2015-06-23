@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :stories
 
-  root 'stories#index'
+  root 'stories#home'
 
   get 'home', to: 'stories#home'
   get 'index', to: 'stories#index'
