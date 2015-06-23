@@ -3,7 +3,7 @@
     Hochgeladen <%= @story.created_at.strftime('um %H:%M am  %d.%m.%Y') %>
 </div>
 <div>
-    <form action="/stories/<%= @story.id %>/edit">
+    <form action="/stories/<%= @story.id %>/edit" method="post">
         <div class="form-group">
             <label>Titel</label>
             <input class="form-control" name="title" value="<%= @story.title %>" placeholder="Titel der Geschichte">
