@@ -8,10 +8,11 @@
 <% if false # browser.firefox? %>
   <i>Leider unterstützt diese Anwendung das Abspielen in ihrem Browser nicht.</i>
 <% else %>
-  <%= audio_tag AudioHelper.download_path(@story.id),
+  <%= audio_tag AudioHelper.download_path_mp3(@story.id),
     controls: true,  preload: true %>
 <% end %>
 </div>
 <div>
-  <%= link_to "Download", AudioHelper.download_path(@story.id) %>
+  <%= link_to "Download .3gp", AudioHelper.download_path_3gp(@story.id) %>
+  <%= link_to "Download .mp3", AudioHelper.download_path_mp3(@story.id) %>
 </div>
