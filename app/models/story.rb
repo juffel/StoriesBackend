@@ -1,5 +1,6 @@
 class Story < ActiveRecord::Base
   before_create :set_token, :set_narrator, :set_place, :set_title
+  before_destroy :delete_audios
 
   private
   def set_token
@@ -42,5 +43,12 @@ class Story < ActiveRecord::Base
         return token
       end
     end
+  end
+
+  # removes all audio files in public/audios/ directory associated with this story
+  def delete_audios
+    id = self.id
+    File.delete('public/' + AudioHelper.download_path_3gp(id))
+    File.delete('public/' + AudioHelper.download_path_mp3(id))
   end
 end
