@@ -5,8 +5,8 @@
 <div><%= @story.text %></div>
 
 <div>
-<% if browser.firefox? %>
-  <i>Leider unterstützt diese Anwendung das Abspielen in Firefox nicht.</i>
+<% if false # browser.firefox? %>
+  <i>Leider unterstützt diese Anwendung das Abspielen in ihrem Browser nicht.</i>
 <% else %>
   <%= audio_tag AudioHelper.download_path(@story.id),
     controls: true,  preload: true %>
