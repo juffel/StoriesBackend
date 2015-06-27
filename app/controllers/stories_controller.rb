@@ -51,7 +51,7 @@ class StoriesController < ApplicationController
   # returns the resource path (url) for a randomly chosen story
   def random
     @story = Story.order("RAND()").first
-    url = AudioHelper.download_path(@story.id)
+    url = AudioHelper.download_path_3gp(@story.id)
     render :xml => url, :status => 200
   end
 
