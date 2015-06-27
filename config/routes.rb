@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'token', to: 'stories#token'
   get 'random', to: 'stories#random'
   get 'about', to: 'stories#about'
+  get 'token_entered', to: 'stories#token_entered'
 
   post 'audio/put_here'
   get 'audio/download/:id', to: 'audio#download'

@@ -55,6 +55,18 @@ class StoriesController < ApplicationController
     render :xml => url, :status => 200
   end
 
+  # returns a boolean value wether the token of a story has been entered and
+  # some attribute of this story has been changed
+  # expects a param "token" to be set
+  def token_entered
+    @story = Story.where(token: params[:token]).first
+    if @story.title != "" or @story.narrator != "" or @story.place != ""
+      render :xml => 'true', :status => 200
+    else
+      render :xml => 'false', :status => 404
+    end
+  end
+
   private
 
   def set_story
