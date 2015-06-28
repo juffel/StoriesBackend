@@ -1,0 +1,23 @@
+<div id="edit-story">
+<%= form_for @story do |f| %>
+  <div class="form-group">
+    <%= f.label 'Titel' %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label 'Erzähler' %>
+    <%= f.text_field :narrator, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label 'Ort' %>
+    <%= f.text_field :place, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label 'Beschreibung' %>
+    <%= f.text_area :text, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.submit "Speichern", class: 'form-control' %>
+  </div>
+<% end %>
+</div>
