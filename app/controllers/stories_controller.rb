@@ -13,16 +13,11 @@ class StoriesController < ApplicationController
   end
 
   def edit
-    # assign passed parameters if present
-    if params['narrator'].present? or params['place'].present?
-      @story.title = params['title'] unless params['title'].empty?
-      @story.narrator = params['narrator'] unless params['narrator'].empty?
-      @story.place = params['place'] unless params['place'].empty?
-      @story.text = params['text'] unless params['text'].empty?
+  end
 
-      redirect_to action: "show"
-    end
-    @story.save
+  def update
+    @story.update!(story_params)
+    redirect_to action: "show"
   end
 
   def token
@@ -68,6 +63,10 @@ class StoriesController < ApplicationController
   end
 
   private
+
+  def story_params
+    params.require(:story).permit(:title, :narrator, :place, :text)
+  end
 
   def set_story
     if params[:id].present?

@@ -3,26 +3,25 @@
     Hochgeladen <%= @story.created_at.strftime('um %H:%M am  %d.%m.%Y') %>
 </div>
 <div>
-    <form action="/stories/<%= @story.id %>/edit">
-        <div class="form-group">
-            <label>Titel</label>
-            <input class="form-control" name="title" value="<%= @story.title %>" placeholder="Titel der Geschichte">
-        </div>
-        <div class="form-group">
-            <label>Erzähler</label>
-            <input class="form-control" name="narrator" value="<%= @story.narrator %>" placeholder="Name Erzähler">
-        </div>
-        <div class="form-group">
-            <label>Ort</label>
-            <input class="form-control" name="place" value="<%= @story.place %>" placeholder="Ort des Geschehens">
-        </div>
-        <div class="form-group">
-            <label>Textform</label>
-            <textarea class="form-control" name="text" rows="10"><%= @story.text %></textarea>
-        </div>
-        <div class="form-group">
-            <input class="form-control" value="Speichern" type="submit"></input>
-        </div>
-    </form>
+<%= form_for @story do |f| %>
+  <div class="form-group">
+    <%= f.label 'Titel' %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label 'Erzähler' %>
+    <%= f.text_field :narrator, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label 'Ort' %>
+    <%= f.text_field :place, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label 'Beschreibung' %>
+    <%= f.text_area :text, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.submit "Speichern", class: 'form-control' %>
+  </div>
+<% end %>
 </div>
-<%= audio_tag  %>
