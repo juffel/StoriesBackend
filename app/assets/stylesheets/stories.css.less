@@ -1,7 +1,6 @@
 // Place all the styles related to the Stories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-@footercolor: #ffaaee;
 @color1-dark: #48133d;
 @color1-lite: #80226c;
 @color2-dark: #805e17;
@@ -9,11 +8,16 @@
 @color3-dark: #b3b3b3;
 @color3-lite: #ffffff;
 
-#navigation {
-  // margin-bottom: 0px;
+body {
+  background-color: @color1-dark;
+  color: @color3-lite;
 }
 
+
 #nav-container {
+  #navigation {
+    background-color: @color2-lite;
+  }
   .container {
     width: 95%;
   }
@@ -23,12 +27,12 @@
   margin-top: 30px;
   height: 60px;
   width: 100%;
-  background-color: @footercolor;
+  background-color: @color1-lite;
   text-align: center;
 }
 
 #new-story-box {
-  // text-align: center;
+  background-color: @color1-lite;
   audio {
     padding-top: 15px;
     width: 100%;
