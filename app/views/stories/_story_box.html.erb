@@ -1,4 +1,8 @@
-<div>
-  <label>Neueste Geschichte:</label>
-  <%= link_to @newest.title, action: "show", id: @newest.id %>
+<div id="new-story-box" class="panel panel-default">
+  <div class="panel-body">
+    <label>Neueste Geschichte:</label>
+    <%= link_to @newest.title, action: "show", id: @newest.id %>
+    <%= audio_tag AudioHelper.download_path_mp3(@newest.id),
+      controls: true,  preload: true %>
+  </div>
 </div>
