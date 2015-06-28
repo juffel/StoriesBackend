@@ -1,4 +1,4 @@
-<li>
-    <%= link_to "Zur Story", controller: "stories", action: "show", id: story.id%>
-    <%= story.created_at.strftime("%H:%M am %d.%m.%Y") %>
+<li id="story-list" class="story">
+  <%= link_to story.title, { controller: "stories", action: "show", id: story.id }, class: 'title' %>
+  <p>vom <%= story.created_at.strftime("%d.%m.%Y um %H:%M") %></p>
 </li>
