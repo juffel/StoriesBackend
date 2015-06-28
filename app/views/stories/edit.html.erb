@@ -1,6 +1,13 @@
 <h1>Geschichte anpassen</h1>
-<div id="creation-date" data-creation-date="<%= @story.created_at %>">
-    Hochgeladen <%= @story.created_at.strftime('um %H:%M am  %d.%m.%Y') %>
-</div>
 
-<%= render "edit_form" %>
+<div class="row">
+  <div id="edit-story" class="col-md-7">
+  <%= render "edit_form" %>
+  </div>
+  <div class="col-md-4">
+    <p id="creation-date" data-creation-date="<%= @story.created_at %>">
+    Hochgeladen <%= @story.created_at.strftime('um %H:%M am  %d.%m.%Y') %>
+    </p>
+  <%= render "edit_context" %>
+  </div>
+</div>
