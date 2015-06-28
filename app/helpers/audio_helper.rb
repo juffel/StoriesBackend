@@ -5,9 +5,6 @@ module AudioHelper
   def self.download_path_3gp id
     download_path(id) + ".3gp"
   end
-  def self.download_path_wav id
-    download_path(id) + ".wav"
-  end
 
   private
   def self.download_path id
