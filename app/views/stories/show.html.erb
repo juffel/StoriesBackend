@@ -1,18 +1,15 @@
 <h1><%= @story.title %></h1>
 <%= link_to "Bearbeiten", { controller: 'stories', action: 'edit', id: @story.id },
       id: 'story-edit', class: 'btn btn-default' %>
+<p>vom <%= @story.created_at.strftime("%d.%m.%Y um %H:%M") %></p>
 
 <div>Erzähler: <%= @story.narrator %></div>
 <div>Ort: <%= @story.place %></div>
 <div><%= @story.text %></div>
 
-<div>
-<% if false # browser.firefox? %>
-  <i>Leider unterstützt diese Anwendung das Abspielen in ihrem Browser nicht.</i>
-<% else %>
-  <%= audio_tag AudioHelper.download_path_mp3(@story.id),
-    controls: true,  preload: true %>
-<% end %>
+<div id="story-audio">
+<%= audio_tag AudioHelper.download_path_mp3(@story.id),
+  controls: true,  preload: true %>
 </div>
 <div>
   <%= link_to "Download .3gp", AudioHelper.download_path_3gp(@story.id) %>
