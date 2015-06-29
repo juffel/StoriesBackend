@@ -6,7 +6,7 @@ class StoriesController < ApplicationController
   end
 
   def index
-    @stories = Story.all.reverse_order
+    @stories = Story.order('created_at DESC')
   end
 
   def show

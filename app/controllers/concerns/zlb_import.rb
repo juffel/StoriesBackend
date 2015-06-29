@@ -31,10 +31,13 @@ module ZLBImport
             type = text['element']['id']
             content = text['text']
             case type
-            when 50
+            when 50 # Titel der Geschichte
               story.title = content
-            when 79
+            when 79 # Beschreibungstext
               story.text = content
+            when 70 # Datum der Aufnahme
+              # assumes date format DD.MM.YYYY
+              story.created_at = Date.strptime(content, '%d.%m.%Y')
             end
           end
           story.save
