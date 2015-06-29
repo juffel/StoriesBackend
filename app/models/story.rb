@@ -48,7 +48,9 @@ class Story < ActiveRecord::Base
   # removes all audio files in public/audios/ directory associated with this story
   def delete_audios
     id = self.id
-    File.delete('public/' + AudioHelper.download_path_3gp(id))
-    File.delete('public/' + AudioHelper.download_path_mp3(id))
+    p_3gp = 'public/' + AudioHelper.download_path_3gp(id)
+    p_mp3 = 'public/' + AudioHelper.download_path_mp3(id)
+    File.delete(p_3gp) if File.exists?(p_3gp)
+    File.delete(p_mp3) if File.exists?(p_mp3)
   end
 end
