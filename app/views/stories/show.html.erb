@@ -5,13 +5,27 @@
   </span>
 <% end %>
 </h1>
+<% if Rails.env == "development" %>
 <%= link_to "Bearbeiten", { controller: 'stories', action: 'edit', id: @story.id },
       id: 'story-edit', class: 'btn btn-default' %>
+<% end %>
 <p>vom <%= @story.created_at.strftime("%d.%m.%Y um %H:%M") %></p>
 
-<div>Erzähler: <%= @story.narrator %></div>
-<div>Ort: <%= @story.place %></div>
-<div><%= @story.text.html_safe %></div>
+<div class="panel">
+  <div class="panel-body">
+    <span class="story-attribute">Erzähler:</span><%= @story.narrator %>
+  </div>
+</div>
+<div class="panel">
+  <div class="panel-body">
+    <span class="story-attribute">Ort:</span><%= @story.place %>
+  </div>
+</div>
+<div class="panel">
+  <div class="panel-body">
+    <span class="story-attribute">Text:</span><%= @story.text.html_safe %>
+  </div>
+</div>
 
 <% if @story.has_audio? %>
 <div id="story-audio">
@@ -19,7 +33,6 @@
   controls: true,  preload: true %>
 </div>
 <div>
-  <%= link_to "Download .3gp", AudioHelper.download_path_3gp(@story.id) %>
-  <%= link_to "Download .mp3", AudioHelper.download_path_mp3(@story.id) %>
+  <%= link_to "Download .mp3", AudioHelper.download_path_mp3(@story.id), class: 'btn btn-success'  %>
 </div>
 <% end %>
