@@ -4,6 +4,7 @@
   </div>
   <ul class="nav navbar-nav">
       <li class="<%= params[:action] == 'index' ? 'active' : '' %>"><%= link_to "Geschichten", controller: "stories", action: "index" %></li>
+      <li><%= link_to "Zufällige Geschichte", controller: "stories", action: "rnd" %></li>
       <li class="<%= params[:action] == 'token' ? 'active' : '' %>"><%= link_to "Token", controller: "stories", action: "token" %></li>
       <li class="<%= params[:action] == 'about' ? 'active' : '' %>"><%= link_to "Über dieses Projekt", controller: "stories", action: "about" %></li>
   </ul>

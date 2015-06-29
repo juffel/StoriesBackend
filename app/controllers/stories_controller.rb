@@ -33,14 +33,20 @@ class StoriesController < ApplicationController
       story = Story.where(token: token).first
       if story.present?
         story_id = story.id
-        redirect_to action: "edit", id: story_id
+        redirect_to action: 'edit', id: story_id
       else
-        params.delete "token_1"
-        params.delete "token_2"
-        params.delete "token_3"
-        redirect_to action: "token"
+        params.delete 'token_1'
+        params.delete 'token_2'
+        params.delete 'token_3'
+        redirect_to action: 'token'
       end
     end
+  end
+
+  # redirects to a random story view
+  def rnd
+    @story = Story.order('RAND()').first
+    redirect_to action: 'show', id: @story.id
   end
 
   # returns the resource path (url) for a randomly chosen story

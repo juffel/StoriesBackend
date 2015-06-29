@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'index', to: 'stories#index'
   get 'token', to: 'stories#token'
   get 'random', to: 'stories#random'
+  get 'rnd', to: 'stories#rnd'
   get 'about', to: 'stories#about'
   get 'token_entered', to: 'stories#token_entered'
 
