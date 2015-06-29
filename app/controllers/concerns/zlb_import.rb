@@ -51,9 +51,24 @@ module ZLBImport
     require 'net/http'
     require 'json'
 
-    # get stories json object
+    stories = []
+
+    # per default the first 50 item are returned
+    # http://grossstadtgeschichten-berlin.de/api/items?page=1&per_page=50
+    # so get total number at first and then iterate through pages
     url = URI.parse('http://grossstadtgeschichten-berlin.de/api/items')
-    res = Net::HTTP.get_response(url)
-    stories = JSON.parse(res.body)
+    total_count = Integer(Net::HTTP.get_response(url)["omeka-total-results"])
+
+    # iterate over 50 pages
+    per_page = 50
+    page = 0
+    (1..total_count).step(per_page) do |n|
+      page += 1
+      url.query = 'page=' + page.to_s
+      # get stories json object
+      res = Net::HTTP.get_response(url)
+      stories += JSON.parse(res.body)
+    end
+    stories
   end
 end
