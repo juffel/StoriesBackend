@@ -1,6 +1,8 @@
 <h1 id="story-title"><%= @story.title %>
 <% if @story.zlb_id.present? %>
-  <span><a href="#">ZLB-Geschichte</a></span>
+  <span>
+    <%= link_to "ZLB-Geschichte", @story.zlb_link %>
+  </span>
 <% end %>
 </h1>
 <%= link_to "Bearbeiten", { controller: 'stories', action: 'edit', id: @story.id },
@@ -11,11 +13,11 @@
 <div>Ort: <%= @story.place %></div>
 <div><%= @story.text.html_safe %></div>
 
+<% if @story.has_audio? %>
 <div id="story-audio">
 <%= audio_tag AudioHelper.download_path_mp3(@story.id),
   controls: true,  preload: true %>
 </div>
-<% if @story.has_audio? %>
 <div>
   <%= link_to "Download .3gp", AudioHelper.download_path_3gp(@story.id) %>
   <%= link_to "Download .mp3", AudioHelper.download_path_mp3(@story.id) %>

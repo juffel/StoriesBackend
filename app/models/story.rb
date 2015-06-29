@@ -7,6 +7,14 @@ class Story < ActiveRecord::Base
     File.exist?(AudioHelper.file_path_mp3(self.id)) and File.exist?(AudioHelper.file_path_3gp(self.id))
   end
 
+  def zlb_link
+    if self.zlb_id.present?
+      "http://grossstadtgeschichten-berlin.de/items/show/" + self.zlb_id.to_s
+    else
+      ""
+    end
+  end
+
   private
   def init
     self.token ||= new_int_token 3
