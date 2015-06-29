@@ -1,22 +1,13 @@
 class Story < ActiveRecord::Base
-  before_create :set_token, :set_narrator, :set_place, :set_title
+  after_initialize :init
   before_destroy :delete_audios
 
   private
-  def set_token
-    self.token = new_int_token 3
-  end
-
-  def set_narrator
-    self.narrator = ""
-  end
-
-  def set_place
-    self.place = ""
-  end
-
-  def set_title
-    self.title = ""
+  def init
+    self.token ||= new_int_token 3
+    self.narrator ||= ""
+    self.place ||= ""
+    self.title ||= ""
   end
 
   # generates a new, unused idtoken string that is composed of 3 letters
