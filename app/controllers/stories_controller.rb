@@ -2,7 +2,7 @@ class StoriesController < ApplicationController
   before_action :set_story
 
   def home
-    @newest = Story.last
+    @newest = Story.last || Story.new(id: -1, title: "Dummy")
   end
 
   def index
