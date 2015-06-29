@@ -11,7 +11,7 @@ class AudioController < ApplicationController
 
     # convert to mp3
     # system "ffmpeg -i #{file_path_3gp} -c:a pcm_s16le #{file_path_wav}"
-    system "ffmpeg -i #{file_path_3gp} -acodec pcm_s16le -f wav -ac 2 - | lame - #{file_path_mp3}"
+    system 'ffmpeg -i "'+file_path_3gp+'" -acodec pcm_s16le -f wav -ac 2 - | lame - "'+file_path_mp3+'"'
 
     # set response as (probably invalid) xml
     xml = story.token
