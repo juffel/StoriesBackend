@@ -1,11 +1,15 @@
-<h1><%= @story.title %></h1>
+<h1 id="story-title"><%= @story.title %>
+<% if @story.zlb_id.present? %>
+  <span><a href="#">ZLB-Geschichte</a></span>
+<% end %>
+</h1>
 <%= link_to "Bearbeiten", { controller: 'stories', action: 'edit', id: @story.id },
       id: 'story-edit', class: 'btn btn-default' %>
 <p>vom <%= @story.created_at.strftime("%d.%m.%Y um %H:%M") %></p>
 
 <div>Erzähler: <%= @story.narrator %></div>
 <div>Ort: <%= @story.place %></div>
-<div><%= @story.text %></div>
+<div><%= @story.text.html_safe %></div>
 
 <div id="story-audio">
 <%= audio_tag AudioHelper.download_path_mp3(@story.id),
