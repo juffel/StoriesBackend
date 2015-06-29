@@ -2,6 +2,11 @@ class Story < ActiveRecord::Base
   after_initialize :init
   before_destroy :delete_audios
 
+  # returns true if this story has associated audio files in public/audios
+  def has_audio?
+    File.exist?(AudioHelper.file_path_mp3(self.id)) and File.exist?(AudioHelper.file_path_3gp(self.id))
+  end
+
   private
   def init
     self.token ||= new_int_token 3

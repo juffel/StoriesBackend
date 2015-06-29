@@ -11,7 +11,9 @@
 <%= audio_tag AudioHelper.download_path_mp3(@story.id),
   controls: true,  preload: true %>
 </div>
+<% if @story.has_audio? %>
 <div>
   <%= link_to "Download .3gp", AudioHelper.download_path_3gp(@story.id) %>
   <%= link_to "Download .mp3", AudioHelper.download_path_mp3(@story.id) %>
 </div>
+<% end %>
