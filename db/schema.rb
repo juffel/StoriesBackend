@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150623174041) do
+ActiveRecord::Schema.define(version: 20150629121845) do
 
   create_table "stories", force: true do |t|
     t.string   "token"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20150623174041) do
     t.string   "narrator"
     t.string   "place"
     t.text     "text"
+    t.string   "zlb_id"
+    t.string   "zlb_link"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
