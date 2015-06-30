@@ -49,9 +49,11 @@ class StoriesController < ApplicationController
     redirect_to action: 'show', id: @story.id
   end
 
-  # returns the resource path (url) for a randomly chosen story
+  # returns the resource path (url) for a randomly chosen story's audio
+  # only stories with audio are chosen randomly
   def random
-    @story = Story.order("RAND()").first
+    audio_stories = Story.all.select{ |s| s.has_audio? }
+    @story = audio_stories[Random.rand(audio_stories.size)]
     url = AudioHelper.download_path_3gp(@story.id)
     render :xml => url, :status => 200
   end
