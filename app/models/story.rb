@@ -21,6 +21,7 @@ class Story < ActiveRecord::Base
     self.narrator ||= ""
     self.place ||= ""
     self.title ||= ""
+    self.text ||= ""
   end
 
   # generates a new, unused idtoken string that is composed of 3 letters
