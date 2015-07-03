@@ -6,6 +6,8 @@ This repository is the web-part of Großstadtziegel, a contribution to [Coding D
   * Kai Kruschel
   * Stefan Brüning
 
+Currently this web application is deployed at [http://kaesim.cepheus.uberspace.de:63190/](http://kaesim.cepheus.uberspace.de:63190/).
+
 More information about the Großstadtziegel-project [here](http://elab-kh-berlin.de/courses/cod1ng_dav1nc1/?cat=11).
 The [Android-part of the project](https://github.com/juffel/SimpleAudioRecorder) is also on github.
 
@@ -27,5 +29,5 @@ The [Android-part of the project](https://github.com/juffel/SimpleAudioRecorder)
     You should have received a copy of the GNU General Public License along
     with this program; if not, write to the Free Software Foundation, Inc.,
     51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
-    
+
 See LICENSE.md for more information.
